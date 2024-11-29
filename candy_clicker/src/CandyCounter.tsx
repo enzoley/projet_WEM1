@@ -14,27 +14,27 @@ const CandyCounter = () => {
     const [lvl5Active, setLvl5Active] = useState(false);
     const [showLvl5Button, setShowLvl5Button] = useState(false);
 
-    // Ajouter un bonbon
+
     const incrementCandies = (e : React.MouseEvent<HTMLImageElement>) => {
         setCandies((prevCandies) => prevCandies + 1);
-        // Ajouter l'effet de rebond
-        const image = e.currentTarget; // Récupère l'élément cible de l'événement
+
+        const image = e.currentTarget;
         image.classList.add("bounce");
 
-        // Retirer l'effet après l'animation
+
         setTimeout(() => {
             image.classList.remove("bounce");
-        }, 400); // Durée de l'animation
+        }, 400);
     };
 
-    // Vérifier si le bouton Lvl 1 doit être affiché
+
     const checkLvl1 = () => {
         if (candies >= 10 && !lvl1Active) {
             setShowLvl1Button(true);
         }
     };
 
-    // Vérifier si le bouton Lvl 2 doit être affiché
+
     const checkLvl2 = () => {
         if (candies >= 15 && lvl1Active && !lvl2Active) {
             setShowLvl2Button(true);
@@ -59,12 +59,12 @@ const CandyCounter = () => {
         }
     }
 
-    // Retirer des bonbons
+
     const retireCandies = (nbCandies : number) => {
         setCandies((prevCandies) => prevCandies - nbCandies);
     };
 
-    // Activer AutoClick Lvl 1
+
     const autoClickLvL1 = () => {
         retireCandies(10);
         setShowLvl1Button(false);
@@ -74,7 +74,7 @@ const CandyCounter = () => {
         }, 1000);
     };
 
-    // Activer AutoClick Lvl 2
+
     const autoClickLvL2 = () => {
         retireCandies(15);
         setShowLvl2Button(false);
@@ -111,7 +111,6 @@ const CandyCounter = () => {
         }, 1000);
     }
 
-    // Vérifier les conditions pour afficher les boutons
     useEffect(() => {
         checkLvl1();
         checkLvl2();
