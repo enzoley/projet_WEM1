@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { FactoryStateProps, FactorySettersProps } from './types';
 import './CandyCounter.css';
 
-const CandyCounter = () => {
+type CandyCounterProps = FactoryStateProps & FactorySettersProps;
+
+const CandyCounter : React.FC<CandyCounterProps> = ({
+                          lvl1Active,
+                          setLvl1Active,
+                          lvl2Active,
+                          setLvl2Active,
+                          lvl3Active,
+                          setLvl3Active,
+                          lvl4Active,
+                          setLvl4Active,
+                          lvl5Active,
+                          setLvl5Active,
+                      }) => {
     const [candies, setCandies] = useState(0);
-    const [lvl1Active, setLvl1Active] = useState(false);
     const [showLvl1Button, setShowLvl1Button] = useState(false);
-    const [lvl2Active, setLvl2Active] = useState(false);
     const [showLvl2Button, setShowLvl2Button] = useState(false);
-    const [lvl3Active, setLvl3Active] = useState(false);
     const [showLvl3Button, setShowLvl3Button] = useState(false);
-    const [lvl4Active, setLvl4Active] = useState(false);
     const [showLvl4Button, setShowLvl4Button] = useState(false);
-    const [lvl5Active, setLvl5Active] = useState(false);
     const [showLvl5Button, setShowLvl5Button] = useState(false);
 
 
@@ -133,27 +142,32 @@ const CandyCounter = () => {
             <div className="add-on-Candy" id="featuresCandy">
                 {showLvl1Button && (
                     <button className="candy-button" onClick={autoClickLvL1}>
-                        AutoClick Lvl 1
+                        Small factory
+                        (10 candies)
                     </button>
                 )}
                 {showLvl2Button && (
                     <button className="candy-button" onClick={autoClickLvL2}>
-                        AutoClick Lvl 2
+                        Medium factory
+                        (15 candies)
                     </button>
                 )}
                 {showLvl3Button && (
                     <button className="candy-button" onClick={autoClickLvL3}>
-                        AutoClick Lvl 3
+                        Large factory
+                        (30 candies)
                     </button>
                 )}
                 {showLvl4Button && (
                     <button className="candy-button" onClick={autoClickLvL4}>
-                        AutoClick Lvl 4
+                        National Institution
+                        (50 candies)
                     </button>
                 )}
                 {showLvl5Button && (
                     <button className="candy-button" onClick={autoClickLvL5}>
-                        AutoClick Lvl 5
+                        World monopoly
+                        (100 candies)
                     </button>
                 )}
             </div>
