@@ -6,16 +6,16 @@
 }
 
 .factory-title {
-    font-size: 2.5rem; /* Taille adaptée pour un titre important */
-    font-weight: bold; /* Mettre en valeur le titre */
-    color: #4a148c; /* Violet profond pour contraster avec le fond rose */
-    text-align: center; /* Centrer le texte */
-    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.5); /* Ombre blanche subtile pour un effet lumineux */
-    font-family: 'Arial', sans-serif; /* Police moderne et lisible */
-    letter-spacing: 1.5px; /* Espacement des lettres pour aérer le texte */
-    text-transform: uppercase; /* Mise en majuscules pour le titre */
-    background-color: rgba(255, 255, 255, 0.2); /* Fond transparent blanc pour le titre */
-    padding: 10px 15px; /* Ajouter un espace autour du texte */
-    border-radius: 8px; /* Coins arrondis pour un effet visuel agréable */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a148c;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.5);
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
