@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import { FactoryStateProps, FactorySettersProps } from './types';
 import CandyCounter from "./CandyCounter";
@@ -27,11 +27,33 @@ function App() {
         setLvl5Active,
     };
 
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    const playMusic = () => {
+        if (audioRef.current) {
+            audioRef.current.play();
+        }
+    };
+
+    const stopMusic = () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+        }
+    };
+
   return (
-    <div className="App">
-        <CandyCounter {...factoryStates} {...factorySetters} />
-        <ShowFactory {...factoryStates} />
-    </div>
+      <div className="App">
+          <div className="music-button">
+            <button className="play-music-button" onClick={playMusic}>🎵 Play Music</button>
+            <button className="play-music-button" onClick={stopMusic}>🎵 Stop Music</button>
+          </div>
+          <audio ref={audioRef} loop>
+              <source src="/musiquecandy.mp3" type="audio/mpeg"/>
+              Your browser does not support the audio element.
+          </audio>
+          <CandyCounter {...factoryStates} {...factorySetters} />
+          <ShowFactory {...factoryStates} />
+      </div>
   );
 }
 

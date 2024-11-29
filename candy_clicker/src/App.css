@@ -41,3 +41,39 @@
 .CandyCounter{
   margin-top: 20px;
 }
+
+audio {
+  display: none;
+}
+
+.play-music-button {
+  background-color: #ff69b4; /* Rose bonbon */
+  color: #fff; /* Texte blanc */
+  font-size: 1.5rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Style cartoon */
+  border: 3px solid #ff1493; /* Bordure rose foncé */
+  border-radius: 20px; /* Coins arrondis */
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 5px #c71585, 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre interne et externe */
+  transition: all 0.3s ease-in-out;
+  text-shadow: 2px 2px 0 #ff1493; /* Ombre pour le texte */
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+
+/* Effet hover */
+.play-music-button:hover {
+  background-color: #ff1493; /* Rose foncé au survol */
+  box-shadow: 0 2px #c71585, 0 10px 20px rgba(0, 0, 0, 0.3); /* Réduction de l'ombre */
+  transform: scale(1.1); /* Agrandir légèrement */
+}
+
+
+.play-music-button:active {
+  background-color: #c71585; /* Rose encore plus foncé */
+  box-shadow: 0 1px #a00070; /* Réduction de l'ombre */
+  transform: scale(0.95);
+}
+
+
