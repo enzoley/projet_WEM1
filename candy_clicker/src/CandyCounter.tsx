@@ -22,10 +22,12 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
     const [showLvl3Button, setShowLvl3Button] = useState(false);
     const [showLvl4Button, setShowLvl4Button] = useState(false);
     const [showLvl5Button, setShowLvl5Button] = useState(false);
+    const [nbClic, setNbClic] = useState(1);
+    const [showNbClicButton, setShowNbClicButton] = useState(false);
 
 
     const incrementCandies = (e : React.MouseEvent<HTMLImageElement>) => {
-        setCandies((prevCandies) => prevCandies + 1);
+        setCandies((prevCandies) => prevCandies + nbClic);
 
         const image = e.currentTarget;
         image.classList.add("bounce");
@@ -35,6 +37,11 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
             image.classList.remove("bounce");
         }, 400);
     };
+
+    const moreClics = () => {
+        setNbClic(nbClic + 3);
+        retireCandies(40);
+    }
 
 
     const checkLvl1 = () => {
@@ -65,6 +72,14 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
     const checkLvl5 = () => {
         if (candies >= 100 && lvl4Active && !lvl5Active) {
             setShowLvl5Button(true);
+        }
+    }
+
+    const checkNbClic = () => {
+        if (candies >= 40) {
+            setShowNbClicButton(true);
+        }else{
+            setShowNbClicButton(false);
         }
     }
 
@@ -126,6 +141,7 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
         checkLvl3();
         checkLvl4();
         checkLvl5();
+        checkNbClic();
     }, [candies, lvl1Active, lvl2Active, lvl3Active, lvl4Active, lvl5Active]);
 
     return (
@@ -168,6 +184,12 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
                     <button className="candy-button" onClick={autoClickLvL5}>
                         World monopoly
                         (100 candies)
+                    </button>
+                )}
+                {showNbClicButton && (
+                    <button className="candy-button" onClick={moreClics}>
+                        More employees
+                        (40 candies)
                     </button>
                 )}
             </div>
