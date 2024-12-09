@@ -21,9 +21,9 @@ Use the command :
 - New workers : each 2000 points
 
 ## Authors
-- [Enzo LEROYER](enzoley)
-- [Arthur MORAND](arthurMorand)
-- [Lucas LEPREVOST](St-Hades)
+- [Lucas Leprévost](https://github.com/St-Hades)
+- [Enzo Leroyer](https://github.com/enzoley)
+- [Arthur Morand](https://github.com/arthurMorand)
 
 ## What we added
 The project was made for the UE. So, we didn't add just on feature, but we made all the game for the project.
