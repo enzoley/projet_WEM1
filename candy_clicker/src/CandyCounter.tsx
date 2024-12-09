@@ -40,43 +40,43 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
 
     const moreClics = () => {
         setNbClic(nbClic + 3);
-        retireCandies(40);
+        retireCandies(2000);
     }
 
 
     const checkLvl1 = () => {
-        if (candies >= 10 && !lvl1Active) {
+        if (candies >= 150 && !lvl1Active) {
             setShowLvl1Button(true);
         }
     };
 
 
     const checkLvl2 = () => {
-        if (candies >= 15 && lvl1Active && !lvl2Active) {
+        if (candies >= 500 && lvl1Active && !lvl2Active) {
             setShowLvl2Button(true);
         }
     };
 
     const checkLvl3 = () => {
-        if (candies >= 30 && lvl2Active && !lvl3Active) {
+        if (candies >= 1500 && lvl2Active && !lvl3Active) {
             setShowLvl3Button(true);
         }
     }
 
     const checkLvl4 = () => {
-        if (candies >= 50 && lvl3Active && !lvl4Active) {
+        if (candies >= 5000 && lvl3Active && !lvl4Active) {
             setShowLvl4Button(true);
         }
     }
 
     const checkLvl5 = () => {
-        if (candies >= 100 && lvl4Active && !lvl5Active) {
+        if (candies >= 10000 && lvl4Active && !lvl5Active) {
             setShowLvl5Button(true);
         }
     }
 
     const checkNbClic = () => {
-        if (candies >= 40) {
+        if (candies >= 2000) {
             setShowNbClicButton(true);
         }else{
             setShowNbClicButton(false);
@@ -90,7 +90,7 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
 
 
     const autoClickLvL1 = () => {
-        retireCandies(10);
+        retireCandies(150);
         setShowLvl1Button(false);
         setLvl1Active(true);
         setInterval(() => {
@@ -100,7 +100,7 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
 
 
     const autoClickLvL2 = () => {
-        retireCandies(15);
+        retireCandies(500);
         setShowLvl2Button(false);
         setLvl2Active(true);
         setInterval(() => {
@@ -109,7 +109,7 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
     };
 
     const autoClickLvL3 = () => {
-        retireCandies(30);
+        retireCandies(1500);
         setShowLvl3Button(false);
         setLvl3Active(true);
         setInterval(() => {
@@ -118,7 +118,7 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
     }
 
     const autoClickLvL4 = () => {
-        retireCandies(50);
+        retireCandies(5000);
         setShowLvl4Button(false);
         setLvl4Active(true);
         setInterval(() => {
@@ -127,12 +127,13 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
     }
 
     const autoClickLvL5 = () => {
-        retireCandies(100);
+        retireCandies(10000);
         setShowLvl5Button(false);
         setLvl5Active(true);
         setInterval(() => {
             setCandies((prevCandies) => prevCandies + 200);
         }, 1000);
+        alert("Congratulation, you have now the world monopoly of candies");
     }
 
     useEffect(() => {
@@ -159,37 +160,37 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
                 {showLvl1Button && (
                     <button className="candy-button" onClick={autoClickLvL1}>
                         Small factory
-                        (10 candies)
+                        (150 candies)
                     </button>
                 )}
                 {showLvl2Button && (
                     <button className="candy-button" onClick={autoClickLvL2}>
                         Medium factory
-                        (15 candies)
+                        (500 candies)
                     </button>
                 )}
                 {showLvl3Button && (
                     <button className="candy-button" onClick={autoClickLvL3}>
                         Large factory
-                        (30 candies)
+                        (1500 candies)
                     </button>
                 )}
                 {showLvl4Button && (
                     <button className="candy-button" onClick={autoClickLvL4}>
                         National Institution
-                        (50 candies)
+                        (5000 candies)
                     </button>
                 )}
                 {showLvl5Button && (
                     <button className="candy-button" onClick={autoClickLvL5}>
                         World monopoly
-                        (100 candies)
+                        (10000 candies)
                     </button>
                 )}
                 {showNbClicButton && (
                     <button className="candy-button" onClick={moreClics}>
                         More employees
-                        (40 candies)
+                        (2000 candies)
                     </button>
                 )}
             </div>
