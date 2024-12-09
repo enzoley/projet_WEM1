@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { FactoryStateProps, FactorySettersProps } from '../types';
 import './CandyCounter.css';
 
@@ -44,44 +44,43 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
     }
 
 
-    const checkLvl1 = () => {
+    const checkLvl1 = useCallback(() => {
         if (candies >= 150 && !lvl1Active) {
             setShowLvl1Button(true);
         }
-    };
+    }, [candies, lvl1Active]);
 
-
-    const checkLvl2 = () => {
+    const checkLvl2 = useCallback(() => {
         if (candies >= 500 && lvl1Active && !lvl2Active) {
             setShowLvl2Button(true);
         }
-    };
+    }, [candies, lvl1Active, lvl2Active]);
 
-    const checkLvl3 = () => {
+    const checkLvl3 = useCallback(() => {
         if (candies >= 1500 && lvl2Active && !lvl3Active) {
             setShowLvl3Button(true);
         }
-    }
+    }, [candies, lvl2Active, lvl3Active]);
 
-    const checkLvl4 = () => {
+    const checkLvl4 = useCallback(() => {
         if (candies >= 5000 && lvl3Active && !lvl4Active) {
             setShowLvl4Button(true);
         }
-    }
+    }, [candies, lvl3Active, lvl4Active]);
 
-    const checkLvl5 = () => {
+    const checkLvl5 = useCallback(() => {
         if (candies >= 10000 && lvl4Active && !lvl5Active) {
             setShowLvl5Button(true);
         }
-    }
+    }, [candies, lvl4Active, lvl5Active]);
 
-    const checkNbClic = () => {
+    const checkNbClic = useCallback(() => {
         if (candies >= 2000) {
             setShowNbClicButton(true);
-        }else{
+        } else {
             setShowNbClicButton(false);
         }
-    }
+    }, [candies]);
 
 
     const retireCandies = (nbCandies : number) => {
@@ -143,7 +142,7 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
         checkLvl4();
         checkLvl5();
         checkNbClic();
-    }, [candies, lvl1Active, lvl2Active, lvl3Active, lvl4Active, lvl5Active]);
+    }, [candies, checkLvl1, checkLvl2, checkLvl3, checkLvl4, checkLvl5, checkNbClic]);
 
     return (
         <div className="candy-counter">
