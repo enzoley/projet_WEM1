@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FactoryStateProps, FactorySettersProps } from './types';
+import { FactoryStateProps, FactorySettersProps } from '../types';
 import './CandyCounter.css';
 
 type CandyCounterProps = FactoryStateProps & FactorySettersProps;
@@ -150,7 +150,7 @@ const CandyCounter : React.FC<CandyCounterProps> = ({
             <h2 className="candy-title">🍬 Candy Clicker</h2>
             <p className="candy-count">Number of candies: {candies}</p>
                 <img
-                    src={`${process.env.PUBLIC_URL}/bonbon.png`}
+                    src={`${process.env.PUBLIC_URL}/img/bonbon.png`}
                     alt="bonbon"
                     className="candy-image"
                     onClick={incrementCandies}

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
-import { FactoryStateProps, FactorySettersProps } from './types';
+import { FactoryStateProps, FactorySettersProps } from '../types';
 import CandyCounter from "./CandyCounter";
 import ShowFactory from "./ShowFactory";
 
@@ -48,7 +48,7 @@ function App() {
             <button className="play-music-button" onClick={stopMusic}>🎵 Stop Music</button>
           </div>
           <audio ref={audioRef} loop>
-              <source src="/musiquecandy.mp3" type="audio/mpeg"/>
+              <source src="/music/musiquecandy.mp3" type="audio/mpeg"/>
               Your browser does not support the audio element.
           </audio>
           <CandyCounter {...factoryStates} {...factorySetters} />

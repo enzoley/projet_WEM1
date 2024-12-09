@@ -17,35 +17,35 @@ const ShowFactories: React.FC<ShowFactoriesProps> = ({ lvl1Active, lvl2Active, l
             {lvl1Active && (
                 <img
                     className="factory-image"
-                    src="/factory.png"
+                    src="/img/factory.png"
                     alt="factory"
                 />
             )}
             {lvl2Active && (
                 <img
                     className="factory-image"
-                    src="/factory.png"
+                    src="/img/factory.png"
                     alt="factory"
                 />
             )}
             {lvl3Active && (
                 <img
                     className="factory-image"
-                    src="/factory.png"
+                    src="/img/factory.png"
                     alt="factory"
                 />
             )}
             {lvl4Active && (
                 <img
                     className="factory-image"
-                    src="/factory.png"
+                    src="/img/factory.png"
                     alt="factory"
                 />
             )}
             {lvl5Active && (
                 <img
                     className="factory-image"
-                    src="/factory.png"
+                    src="/img/factory.png"
                     alt="factory"
                 />
             )}
