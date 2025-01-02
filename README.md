@@ -26,8 +26,8 @@ Use the command :
 - [Arthur Morand](https://github.com/arthurMorand)
 
 ## What we added
-The project was made for the UE. So, we didn't add just on feature, but we made all the game for the project.
-There is 3 main components:
+The project was made for the UE. So, we didn't add just one feature, but we made all the game for the project.
+There are 3 main components:
 - CandyCounter : the game system
 - ShowFactory : display factories images when you buy them
 - App : the main component
